@@ -22,7 +22,6 @@ class KeywordSuggestion extends Seo
             $json = mb_substr((string) $response->getBody(), 17, -2);
 
             return [
-                'query' => $keyword,
                 'keywords' => json_decode($json, true)['s'] ?? [],
             ];
         } catch (GuzzleException $e) {
